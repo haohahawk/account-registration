@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yo</title>
+  <script src="./form.js" defer></script>
+  <script src="./router.module.js" defer></script>
+  <script src="./auth.service.js" defer></script>
+  <script src="./home-page.js" defer></script>
+  <script src="./sign-in-page.js" defer></script>
+  <script src="./sign-up-page.js" defer></script>
+  <script src="./app.js" defer></script>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="router-outlet"></div>
+  <template id="home-page">
+    <link rel="stylesheet" href="./theme.css">
+    <div class="container">
+      <h2>歡迎 <span id="account-id"></span></h2>
+      <button type="button" id="sign-out">登出</button>
+    </div>
+  </template>
+  <template id="sign-in-page">
+    <link rel="stylesheet" href="./theme.css">
+    <div class="container">
+      <h3>登入帳號</h3>
+      <div class="form-field" id="account-id">
+        <label>電子郵件</label>
+        <input type="email" />
+        <p></p>
+      </div>
+      <div class="form-field" id="password">
+        <label>密碼</label>
+        <input type="password" />
+        <p></p>
+      </div>
+      <div style="display: flex; justify-content: space-between">
+        <a href='#sign-up'>建立帳號</a>
+        <button type="button" class="primary" id="sign-in">登入</button>
+      </div>
+    </div>
+  </template>
+  <template id="sign-up-page">
+    <link rel="stylesheet" href="./theme.css">
+    <div class="container">
+      <h3>建立帳號</h3>
+      <div class="form-field" id="account-id">
+        <label>電子郵件</label>
+        <input type="email" />
+        <p></p>
+      </div>
+      <div class="form-field" id="password">
+        <label>密碼</label>
+        <input type="password" />
+        <p></p>
+      </div>
+      <div class="form-field" id="repeat-password">
+        <label>確認密碼</label>
+        <input type="password" />
+        <p></p>
+      </div>
+      <div style="display: flex; justify-content: space-between">
+        <a href='#sign-in'>改為登入帳號</a>
+        <button type="button" class="primary" id="sign-up">註冊</button>
+      </div>
+    </div>
+  </template>
+</body>
+
+</html>

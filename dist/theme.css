@@ -1,0 +1,72 @@
+:host {
+  font-size: 16px;
+}
+
+* {
+  font-family: "LiGothic", "Microsoft JhengHei", Arial, serif;
+  box-sizing: border-box;
+  font-size: inherit;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.form-field {
+  line-height: 1.125;
+  padding-bottom: 0.75em;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.form-field.invalid {
+  color: #f44336;
+}
+
+.form-field label {
+  display: block;
+  width: 100%;
+  padding: 1em 1em 0 1em;
+  font-size: 75%;
+  min-height: 1em;
+  line-height: 1;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.form-field input {
+  width: 100%;
+  padding: 0.25em 0.75em 0.75em;
+  border-top: none;
+  border-left: none;
+  border-bottom: rgba(0, 0, 0, 0.42) 1px solid;
+  border-right: none;
+  color: #000000;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.form-field input:focus {
+  outline: none;
+}
+
+.form-field p {
+  padding: 0 1em;
+  font-size: 75%;
+  margin-top: 0.66666667em;
+  margin-bottom: 0;
+  min-height: 1em;
+  line-height: 1;
+}
+
+button {
+  border: rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  padding: 0 15px;
+  line-height: 34px;
+  min-width: 64px;
+  font-size: inherit;
+}
+
+button.primary {
+  background-color: #3f51b5;
+  color: #fff;
+}
