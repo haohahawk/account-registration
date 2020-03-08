@@ -7,7 +7,7 @@ import { from } from './lib/util.js';
 import DBInjector from './lib/db-injector.js';
 import FileHelper from './lib/file-helper.js';
 
-import AuthDA from './respotory/auth.da.js';
+import AuthDA from './repository/auth.da.js';
 import AuthService from './use-case/auth.service.js';
 import { getRequestJson, ResponseError, consumeError, sendResponseJson } from './lib/http-helper.js';
 import DB_CONFIG from '../db.config.js';
