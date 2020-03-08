@@ -1,7 +1,7 @@
 {
   "name": "account-registration",
   "version": "1.0.0",
-  "description": "practice email sign up by NodeJS and mongoBD",
+  "description": "Website login and registration, using Node.JS and MongoDB and JWT and Custom Elements.",
   "main": "./src/index.js",
   "scripts": {
     "start": "node --experimental-modules ./src/index.js",
