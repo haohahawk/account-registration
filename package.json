@@ -1,0 +1,25 @@
+{
+  "name": "account-registration",
+  "version": "1.0.0",
+  "description": "practice email sign up by NodeJS and mongoBD",
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "node --experimental-modules ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haohahawk/account-registration.git"
+  },
+  "author": "haha hao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haohahawk/account-registration/issues"
+  },
+  "homepage": "https://github.com/haohahawk/account-registration#readme",
+  "type": "module",
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.5.4"
+  }
+}
