@@ -37,7 +37,7 @@ class SignInPage extends HTMLElement {
         errorMsgDom: shadowRoot.querySelector('#account-id p'),
         validation: [
           Validator.required(),
-          Validator.pattern(/^[a-z][\w\.-]*@\w+(\.\w+)+$/, 'email')
+          Validator.pattern(/^[\w.-]+@\w+(\.\w+)+$/, 'email')
         ],
         validationMsg: {
           required: '必填',

@@ -28,7 +28,7 @@ export default class AuthService {
       throw new ResponseError({ status: 401, message: 'account format invalid' });
     }
 
-    user = encryptPassword(user);
+    user = reviseAccount(user);
     const isUser = await this.authDA.isExisit(user);
 
     if (!isUser) {
@@ -48,8 +48,8 @@ export default class AuthService {
       throw new ResponseError({ status: 401, message: 'account format invalid' });
     }
 
-    user = encryptPassword(user);
-    const isAvailable = !(await this.authDA.isExisit(user));
+    user = reviseAccount(user);
+    const isAvailable = !(await this.authDA.isExisit({ accountId: user.accountId }));
     if (!isAvailable) {
       throw new ResponseError({ status: 400, message: 'account is been taken' });
     }
@@ -79,7 +79,7 @@ function verifyAccountFormat(user) {
   return isValidAccountId && isValidPassword;
 }
 function verifyEmail(str = '') {
-  return /^[a-z][\w\.-]*@\w+(\.\w+)+$/.test(str);
+  return /^[\w.-]+@\w+(\.\w+)+$/.test(str);
 }
 function verifyPassword(str = '') {
   const isIncludeNumber = /\d/.test(str);
@@ -97,9 +97,13 @@ function verifyPassword(str = '') {
  * @param {User} user
  * @returns {User} encrypted User
  */
-function encryptPassword(user) {
+function reviseAccount(user) {
+  const { accountId, password } = user;
   const result = Object.assign({}, user);
-  if (user && user.password) {
+  if (accountId) {
+    result.accountId = accountId.toLowerCase();
+  }
+  if (password) {
     result.password = crypto.createHash('md5')
       .update(user.password + JWT_CONFIG.salt)
       .digest('hex');
