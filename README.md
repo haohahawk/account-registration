@@ -3,7 +3,12 @@
 Website login and registration, using Node.JS and MongoDB and JWT and Custom Element.
 ___
 
-clone and run web server
+clone and install
+```
+npm install
+```
+
+run web server
 ```
 npm run start
 ```
@@ -18,10 +23,10 @@ modify MongoDB settings in "config.js"
 
 ```js
 [{
-  uri: '', // custom MongoClient uri
-  option: {  // costom MongoClient options
+  uri: '', // MongoClient uri
+  option: {  // MongoClient options
     useNewUrlParser: true,
     useUnifiedTopology: true
-  },
+  }
 }];
 ```
